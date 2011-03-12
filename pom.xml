@@ -1,0 +1,165 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.gemserk.games.artemistest</groupId>
+	<artifactId>artemistest</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>com.googlecode.mavennatives</groupId>
+				<artifactId>maven-nativedependencies-plugin</artifactId>
+				<version>0.0.4</version>
+				<executions>
+					<execution>
+						<id>unpacknatives</id>
+						<goals>
+							<goal>copy</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>2.5</version>
+				<configuration>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>2.1.2</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.7</version>
+				<configuration>
+					<encoding>UTF-8</encoding>
+				</configuration>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.1</version>
+			</plugin>
+		</plugins>
+	</build>
+
+
+	<dependencies>
+		<dependency>
+			<groupId>com.gamadu.artemis</groupId>
+			<artifactId>artemis</artifactId>
+			<version>0.0.1-GEMSERK-SNAPSHOT</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>slick</groupId>
+			<artifactId>slick</artifactId>
+			<version>274</version>
+			<exclusions>
+
+				<exclusion>
+					<groupId>phys2d</groupId>
+					<artifactId>phys2d</artifactId>
+				</exclusion>
+
+				<exclusion>
+					<groupId>org.lwjgl</groupId>
+					<artifactId>lwjgl</artifactId>
+				</exclusion>
+
+				<exclusion>
+					<groupId>org.lwjgl</groupId>
+					<artifactId>lwjgl-jinput</artifactId>
+				</exclusion>
+
+				<exclusion>
+					<groupId>org.lwjgl</groupId>
+					<artifactId>lwjgl-native</artifactId>
+				</exclusion>
+
+				<exclusion>
+					<groupId>ibxm</groupId>
+					<artifactId>ibxm</artifactId>
+				</exclusion>
+
+				<exclusion>
+					<groupId>jcraft</groupId>
+					<artifactId>jogg</artifactId>
+				</exclusion>
+
+				<exclusion>
+					<groupId>jcraft</groupId>
+					<artifactId>jorbis</artifactId>
+				</exclusion>
+
+				<exclusion>
+					<groupId>javax.jnlp</groupId>
+					<artifactId>jnlp</artifactId>
+				</exclusion>
+
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.lwjgl</groupId>
+			<artifactId>lwjgl</artifactId>
+			<version>2.6.0-GEMSERK</version>
+		</dependency>
+		<dependency>
+			<groupId>org.lwjgl</groupId>
+			<artifactId>jinput</artifactId>
+			<version>2.6.0-GEMSERK</version>
+		</dependency>
+
+
+	</dependencies>
+</project>
